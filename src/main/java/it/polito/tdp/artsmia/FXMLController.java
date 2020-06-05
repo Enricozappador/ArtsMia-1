@@ -18,6 +18,8 @@ import javafx.scene.control.TextField;
 public class FXMLController {
 	
 	private Model model;
+	
+	
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -47,6 +49,10 @@ public class FXMLController {
     
     @FXML
     void doAnalizzaOggetti(ActionEvent event) {
+    	
+    	txtResult.clear();
+    	this.model.CreaGrafo();
+    	txtResult.appendText(String.format("Grafo creato : #Vertici : %d #Archi : %d", this.model.nVertici(), this.model.nArchi())); 
 
     }
 
